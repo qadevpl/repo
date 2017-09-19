@@ -15,13 +15,15 @@ namespace SeleniumTest.PageObject
         [FindsBy(How = How.Id, Using = "lst-ib")]
         [CacheLookup]
         public IWebElement searchField { get; set; }
+
         [FindsBy(How = How.Name, Using = "btnK")]
         [CacheLookup]
         public IWebElement searchButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//a[text() ='QADev']")]
         [CacheLookup]
         public IWebElement linkForPage { get; set; }
-
+        
         public MainPage(IWebDriver driver)
         {
             this.driver = driver;
