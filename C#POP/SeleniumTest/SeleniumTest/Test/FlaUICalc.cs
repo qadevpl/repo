@@ -40,6 +40,8 @@ namespace SeleniumTest.Test
 
                 Assert.AreEqual("Wyświetlana wartość to 3", resultValue);
             }
+
+            app.Close();
         }
     }
 }
