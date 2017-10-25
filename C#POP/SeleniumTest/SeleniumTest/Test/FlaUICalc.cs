@@ -1,18 +1,18 @@
 ﻿using System;
-using NUnit.Framework;
 using FlaUI.Core;
 using FlaUI.UIA3;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.AutomationElements.Infrastructure;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumTest.Test
 {
-    [TestFixture]
+    [TestClass]
     public class FlaUICalc
     {
         public object Find { get; private set; }
 
-        [Test]
+        [TestMethod]
         public void FlaUICalcTest()
         {
             var app = Application.LaunchStoreApp("Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
