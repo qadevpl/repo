@@ -1,4 +1,4 @@
-var AngularjsPage = require('./angularjsPage.js');
+var AngularjsPage = require('../pages/angularjsPage.js');
 var address = 'https://angularjs.org';
 var angularjsPage;
 
