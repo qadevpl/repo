@@ -1,0 +1,20 @@
+{
+  "name": "testRestAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "conf.js",
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  },
+  "author": "mozibko",
+  "license": "ISC"
+}
