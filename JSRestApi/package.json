@@ -13,7 +13,10 @@
     "request": "^2.85.0"
   },
   "devDependencies": {
-    "jasmine": "^3.1.0"
+    "jasmine": "^3.1.0",
+    "jasmine-reporters": "^2.3.0",
+    "phantomjs": "^2.1.7",
+    "protractor-html-reporter": "^1.3.2"
   },
   "author": "mozibko",
   "license": "ISC"

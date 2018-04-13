@@ -9,3 +9,13 @@ describe('test RestApi', () => {
            });
     });
 });
+
+//DONE:
+//---debug mode (launch.json file)
+//---jasmine
+//---PhantomJS: https://github.com/angular/protractor/issues/150, https://github.com/webdriverio/webdriverio/issues/166
+//java -jar selenium-server-standalone-2.41.0.jar
+//todo: jasmine report
+
+//TODO:
+//more api tests
