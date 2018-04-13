@@ -1,0 +1,37 @@
+=====prezentacja====
+- podejście do testów automatycznych
+- RestAPI opis metod protokołu
+- narzędzia do testów RestAPI
+- JavaScript właściwości ES6
+- protractor (jasmine, phantomJS)
+- Selenium Grid
+- DDT w testach rest API
+
+=====ćwiczenia====
+- na komputerach powinny być:
+NodeJS
+VisualStudio Code
+
+1. Konfiguracja środowiska
+   - protractor 
+   - jasmine (local)
+   - phantomJS (local)
+   - jasmine-report (local)
+   - launch.json (debug VSCode)
+
+2. uruchomienie środowiska
+   - java -jar selenium-server-standalone-2.41.0.jar
+   - protractor conf.js
+
+3. przygotowanie testów
+   - objaśnienie struktuty kodu + pierwszy test
+   - debugowanie 1 testu
+
+!!todo - postman chrome narzędzie do ręcznej weryfikacji serwisów
+!!todo - testy metod PUT i POST i DEL
+!!todo - json zew z danymi
+!!todo - dorzucenie warunków weryfikacji (więcej expect)
+
+
+
+
