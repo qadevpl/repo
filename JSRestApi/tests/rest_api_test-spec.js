@@ -49,8 +49,6 @@ describe('test RestApi', () => {
 //TODO:
 //more api tests
 //improve report
-//sprawdzić czy działa najnowszy selenium_grid
-//sprawdzić widoczność projektu w GITHUB
 
 
 //run tests
