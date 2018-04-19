@@ -1,5 +1,5 @@
 const request = require('request');
-const jsonPlaceHolderURL = "https://jsonplaceholder.typicode.com/posts/?userId=5";
+'use strict';
 
 describe('angularjs homepage todo list', function() {
     it('should add a todo', function() {
@@ -20,11 +20,22 @@ describe('angularjs homepage todo list', function() {
 });
 
 describe('test RestApi', () => {
-    it('test for services', (done) => {
-            request.get(jsonPlaceHolderURL, (err, res, body) => {  
-            expect(res.statusCode).toBe(200);
-            done();
+    it('Get method', (done) => {
+            const url = "https://jsonplaceholder.typicode.com/posts/?userId=5";
+            request.get(url, function (error, response) {
+                expect(response.statusCode).toEqual(200);
+                done();
            });
+    });
+
+    it('Post method', (done) => {
+        const url = "https://jsonplaceholder.typicode.com/posts";
+        const returnBody = {title: "foo",  id: 101};
+        request.post({url:url, form: {title:'foo'}}, function(err,httpResponse,body){ 
+            expect(httpResponse.statusCode).toEqual(201);
+            expect(JSON.parse(body)).toEqual(returnBody)
+            done();
+         });
     });
 });
 
