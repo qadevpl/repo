@@ -12,6 +12,8 @@
 NodeJS
 VisualStudio Code
 
+!!zainstalować java + selenium grid 2.41.0
+
 1. Konfiguracja środowiska
    - protractor 
    - jasmine (local)
