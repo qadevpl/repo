@@ -1,5 +1,4 @@
 const request = require('request');
-'use strict';
 
 describe('angularjs homepage todo list', function() {
     it('should add a todo', function() {
@@ -22,35 +21,83 @@ describe('angularjs homepage todo list', function() {
 describe('test RestApi', () => {
     it('Get method', (done) => {
             const url = "https://jsonplaceholder.typicode.com/posts/?userId=5";
-            request.get(url, function (error, response) {
-                expect(response.statusCode).toEqual(200);
+            const returnBody = {
+                "userId": 5,
+                "id": 44,
+                "title": "optio dolor molestias sit",
+                "body": "temporibus est consectetur dolore\net libero debitis vel velit laboriosam quia\nipsum quibusdam qui itaque fuga rem aut\nea et iure quam sed maxime ut distinctio quae"
+            };
+            request.get(url, function (err,httpResponse,body) {
+                expect(httpResponse.statusCode).toEqual(200);
+                expect(JSON.parse(body)).toContain(returnBody);
                 done();
            });
     });
 
     it('Post method', (done) => {
         const url = "https://jsonplaceholder.typicode.com/posts";
-        const returnBody = {title: "foo",  id: 101};
-        request.post({url:url, form: {title:'foo'}}, function(err,httpResponse,body){ 
+        const form = {
+            "title": "foo", 
+            "body": 'bar', 
+            "userId": 1
+        };
+        const returnBody = {
+            "title": "foo",  
+            "id": 101, 
+            "body": "bar", 
+            "userId": "1"
+        };
+        request.post({url:url, form: form}, function(err,httpResponse,body){ 
             expect(httpResponse.statusCode).toEqual(201);
             expect(JSON.parse(body)).toEqual(returnBody)
             done();
          });
     });
+
+    it('Put method', (done) => {
+        const url = "https://jsonplaceholder.typicode.com/posts/1";
+        const form = {
+            "id": 1, 
+            "title": "foo", 
+            "body": "bar", 
+            "userId": 1
+        };
+        const returnBody = {
+            "id": 1, 
+            "title": "foo", 
+            "body": 'bar', 
+            userId: '1'
+        };
+        request.put({url:url, form: form}, function(err,httpResponse,body){ 
+            expect(httpResponse.statusCode).toEqual(200);
+            expect(JSON.parse(body)).toEqual(returnBody)
+            done();
+         });
+    });
+
+    it('Patch method', (done) => {
+        const url = "https://jsonplaceholder.typicode.com/posts/1";
+        const form = {
+            "title": "foo"
+        };
+        const returnBody = {
+            "id": 1, 
+            "title": "foo",
+            "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto", 
+            "userId": 1
+        };
+        request.patch({url:url, form: form}, function(err,httpResponse,body){ 
+            expect(httpResponse.statusCode).toEqual(200);
+            expect(JSON.parse(body)).toEqual(returnBody)
+            done();
+         });
+    });
+
+    it('Delete method', (done) => {
+        const url = "https://jsonplaceholder.typicode.com/posts/1";
+        request.delete({url:url}, function(err,httpResponse,body){ 
+            expect(httpResponse.statusCode).toEqual(200);
+            done();
+         });
+    });
 });
-
-//DONE:
-//---debug mode (launch.json file)
-//---jasmine
-//---PhantomJS: https://github.com/angular/protractor/issues/150, https://github.com/webdriverio/webdriverio/issues/166
-//java -jar selenium-server-standalone-2.41.0.jar
-//jasmine report
-
-//TODO:
-//more api tests
-//improve report
-
-
-//run tests
-//java -jar selenium-server-standalone-2.41.0.jar
-//protractor conf.js (just only)

@@ -10,34 +10,35 @@ exports.config = {
 
     framework: 'jasmine2',
       onPrepare: function() {
-        var reporters = require('jasmine-reporters');
-        var junitReporter = new reporters.JUnitXmlReporter({
+      var jasmineReporters = require('jasmine-reporters');
+      jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+        consolidateAll: true,
         savePath: 'testresults',
-        consolidateAll: false
-      });
-      jasmine.getEnv().addReporter(junitReporter)
-      },
+        filePrefix: 'xmloutput'
+    }));
+  },
 
-    onComplete: function() {
-      var browserName, browserVersion;
-      var capsPromise = browser.getCapabilities();
-  
-      capsPromise.then(function (caps) {
-         browserName = caps.get('Chrome');
-         browserVersion = caps.get('version');
-  
-         var HTMLReport = require('protractor-html-reporter');
-  
-         testConfig = {
-             reportTitle: 'Test Execution Report',
-             outputPath: './htmlreport',
-             screenshotPath: './screenshots',
-             testBrowser: browserName,
-             browserVersion: browserVersion,
-             modifiedSuiteName: false,
-             screenshotsOnlyOnFailure: true
-         };
-         new HTMLReport().from('testresults/junitresults-testRestApi.xml', testConfig);
-     });
-    }
-  };
+  //HTMLReport called once tests are finished 
+  onComplete: function() {
+    var browserName, browserVersion;
+    var capsPromise = browser.getCapabilities();
+
+    capsPromise.then(function (caps) {
+      browserName = caps.get('browserName');
+      browserVersion = caps.get('version');
+
+      var HTMLReport = require('protractor-html-reporter');
+
+      testConfig = {
+          reportTitle: 'Test Execution Report',
+          outputPath: './htmlreport', //--change add folder
+          screenshotPath: './screenshots',
+          testBrowser: browserName,
+          browserVersion: browserVersion,
+          modifiedSuiteName: false,
+          screenshotsOnlyOnFailure: true
+      };
+      new HTMLReport().from('testresults/xmloutput.xml', testConfig); //--change location for xml file
+  });
+  }
+};
