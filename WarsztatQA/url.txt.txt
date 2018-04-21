@@ -1,0 +1,58 @@
+1. Konfiguracja œrodowiska, niezbêdne instalacje:
+
+NodeJS: https://nodejs.org/en/
+VisualStudio Code: https://code.visualstudio.com
+JavaSE: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+Selenium Grid 2.41.0: http://selenium-release.storage.googleapis.com/index.html
+Protractor: npm install –g protractor
+
+2. Uruchomienie pierwszego testu automatycznego napisanego w protractor, 
+przyk³ad z oficjalnej strony: 
+https://www.protractortest.org/#/
+
+3. Utworzenie 1 testu RestAPI wykorzystuj¹c bibliotekê request:
+https://github.com/request/request
+Instalacja biblioteki lokalnie: npm install request –save-dev
+Zapytanie do serwisu: https://jsonplaceholder.typicode.com/posts/?userId=5
+Weryfikacja czy odpowiedŸ jest 200
+
+4. Debugowanie kodu, ustawienia VisualStudio Code:
+"configurations": [
+{
+	"type": "node",
+	"request": "launch",
+	"name": "Jasmine Individual Test",
+	"program": "${workspaceRoot}\\node_modules\\jasmine\\bin\\jasmine.js",
+	"args": [ 
+	"tests\\*-spec.js" 
+	], 
+"env": { 
+	"NODE_PATH": "." 
+	} 
+}]
+
+5. Zmiana przegl¹darki na bez ramkow¹ PhantomJS
+Instalacja phantomJS lokalnie: npm install phantomjs –save-dev
+Konfiguracja:
+capabilities: {
+browserName: 'phantomjs',
+'phantomjs.binary.path': './node_modules/phantomjs/lib/phantom/bin/phantomjs.exe',
+'phantomjs.cli.args': ['--web-security=false', '--ignore-ssl-errors=true', '--webdriver-loglevel=DEBUG'],
+},
+
+6. Wykorzystanie narzêdzia Postman w celu weryfikacji rêcznej serwisu
+Instalacja Postman w przegl¹darce Chrome
+
+7. Wykonanie testów dla wszystkich metod ze strony: https://jsonplaceholder.typicode.com
+https://github.com/typicode/jsonplaceholder
+
+8. Instalacja i konfiguracja Jasmine-report + protractor html report:
+https://github.com/larrymyers/jasmine-reporters
+https://www.npmjs.com/package/protractor-html-reporter
+
+9. Implementacja DDT w wytworzonych testach automatycznych
+10. U¿ycie mechanizmu promise w testach RestAPI
+
+
+
+
