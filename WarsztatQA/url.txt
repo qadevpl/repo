@@ -15,6 +15,7 @@ https://github.com/request/request
 Instalacja biblioteki lokalnie: npm install request ñsave-dev
 Zapytanie do serwisu: https://jsonplaceholder.typicode.com/posts/?userId=5
 Weryfikacja czy odpowiedü jest 200
+https://jasmine.github.io/tutorials/your_first_suite
 
 4. Debugowanie kodu, ustawienia VisualStudio Code:
 "configurations": [
