@@ -1,0 +1,15 @@
+//install for allure
+npm install allure-commandline --save-dev
+npm install jasmine-allure-reporter --save-dev
+
+
+//command for generating: package.json
+npm init 
+
+
+//command for run tests
+npm test
+
+
+//comand for run report
+npm run report

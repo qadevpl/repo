@@ -1,0 +1,23 @@
+{
+  "name": "jasmine",
+  "version": "1.0.0",
+  "description": "example tests with allure report",
+  "main": "conf.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jasmine-allure-reporter": "^1.0.2"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.5.0"
+  },
+  "scripts": {
+    "pretest": "if exist allure-results RD /S /Q allure-results",
+    "test": "protractor conf.js",
+    "posttest": "allure generate allure-results --clean -o allure-report || true",
+    "report": "allure generate allure-results --clean -o allure-report || true"
+  },
+  "author": "",
+  "license": "ISC"
+}

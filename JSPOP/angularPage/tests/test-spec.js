@@ -14,11 +14,11 @@ beforeEach(function(){
   browser.get(address);
 });
 
-describe('test QADev site', function() {
-    it('find QADev site in google', function() {
-      angularjsPage.addNewTest()
-        .then(() => expect(angularjsPage.readElementFromToDoList().count()).toEqual(3))
-        .then(() => expect(angularjsPage.readElementFromToDoList().get(2).getText()).toEqual('write first protractor test'))
-        .then(() => expect(angularjsPage.clickElementFromToDoListAndGetCompleteAmount(2)).toEqual(2));
-    });
+describe('protractor common example', function() {
+  it('protractor common example', function() {
+    angularjsPage.addNewTest()
+      .then(() => expect(angularjsPage.readElementFromToDoList().count()).toEqual(3))
+      .then(() => expect(angularjsPage.readElementFromToDoList().get(2).getText()).toEqual('write first protractor test'))
+      .then(() => expect(angularjsPage.clickElementFromToDoListAndGetCompleteAmount(2)).toEqual(2));
+  });
 });
