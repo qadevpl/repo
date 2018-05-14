@@ -8,6 +8,7 @@ beforeAll(function(){
 });
 
 beforeEach(function(){
+  browser.waitForAngularEnabled(false);
   browser.get(address);
 });
 

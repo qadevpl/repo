@@ -1,7 +1,7 @@
 var AngularjsPage = function() {
-    var todoField = element(by.model('todoList.todoText'))
-    var addButton = element(by.css('[value="add"]'));
-    var todoList = element.all(by.repeater('todo in todoList.todos'));
+    const todoField = element(by.model('todoList.todoText'))
+    const addButton = element(by.css('[value="add"]'));
+    const todoList = element.all(by.repeater('todo in todoList.todos'));
 
     this.addNewTest = async function(){
       await todoField.sendKeys('write first protractor test');

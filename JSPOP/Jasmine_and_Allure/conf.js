@@ -32,5 +32,7 @@ exports.config = {
     //tests params
     params:{
         url: 'https://angularjs.org'
-    }
+    },
+
+    SELENIUM_PROMISE_MANAGER: false,
   };
