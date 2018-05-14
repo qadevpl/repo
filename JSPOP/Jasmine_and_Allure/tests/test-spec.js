@@ -12,10 +12,10 @@ beforeEach(function(){
 });
 
 describe('protractor common example', function() {
-    it('protractor common example', function() {
-      angularjsPage.addNewTest()
-        .then(() => expect(angularjsPage.readElementFromToDoList().count()).toEqual(3))
-        .then(() => expect(angularjsPage.readElementFromToDoList().get(2).getText()).toEqual('write first protractor test'))
-        .then(() => expect(angularjsPage.clickElementFromToDoListAndGetCompleteAmount(2)).toEqual(2));
+    it('protractor common example', async function() {
+      await angularjsPage.addNewTest();
+        expect(await angularjsPage.readElementFromToDoList().count()).toEqual(3);
+        expect(await angularjsPage.readElementFromToDoList().get(2).getText()).toEqual('write first protractor test');
+        expect(await angularjsPage.clickElementFromToDoListAndGetCompleteAmount(2)).toEqual(2);
     });
 });
