@@ -34,5 +34,5 @@ exports.config = {
         url: 'https://angularjs.org'
     },
 
-    SELENIUM_PROMISE_MANAGER: false,
+    //SELENIUM_PROMISE_MANAGER: false,
   };
