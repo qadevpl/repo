@@ -13,3 +13,10 @@ npm test
 
 //comand for run report
 npm run report
+
+//start web-driver
+webdriver-manager update
+webdriver-manager start
+
+//update protractor if it neccessery
+npm update -g protractor
