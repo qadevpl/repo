@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-ozi
+spec:
+  replicas: 20
+  selector:
+    app: myapp-ozi
+  template:
+    metadata:
+      name: myapp-ozi
+      labels:
+        app: myapp-ozi
+    spec:
+      containers:
+        - name: myapp-ozi-ctr
+          image: nigelpoulton/pluralsight-docker-ci:latest
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,61 @@
+images:     TAG:        IMAGE_ID
+nginxplus   latest      b9ba39b93a15
+
+
+docker tag nginxplus kubernetesregistr.azurecr.io/nginxplus:1.0.0
+
+
+docker push kubernetesregistr.azurecr.io/nginxplus:1.0.0
+
+
+CDM -> #check docker image:
+docker images nginxplus
+
+CDM -> #build docker images
+docker build --no-cache -t nginxplus .
+
+#check build docker
+docker history nginxplus
+
+#remove container
+docker container mynginxplus
+docker inspect mynginxplus
+docker container kill mynginxplus
+docker container stop mynginxplus
+docker container rm mynginxplus
+
+#work on port 80:80 but with error: Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use.
+docker run --name mynginxplus -p 80:80 -d nginxplus
+docker run --name mynginxplus -p 8081:8081 -d nginxplus (!! works)
+
+#remove old image with tag:
+docker rmi kubernetesregistr.azurecr.io/nginxplus:1.0.1
+
+#create new tag:
+docker tag nginxplus kubernetesregistr.azurecr.io/nginxplus:1.0.2
+
+docker push kubernetesregistr.azurecr.io/nginxplus:1.0.2
+
+================notes nginx conf
+rewrite
+
+IIS -> sites -> eam_dev_app -> URL Rewrite
+
+proxy_pass - dodać
+
+1. deploy eam na staging
+
+
+az aks get-credentials --resource-group F5 --name NginxKuberetes --admin
+
+az login
+az list
+
+subscription GIS Express root infra production
+
+https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
+
+
+tao omicron
+
+Omicron
